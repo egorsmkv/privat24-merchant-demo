@@ -22,8 +22,7 @@ if ($product === false) {
 }
 
 $orderID = uniqid($product['id'], true);
-$returnURL = 'http://127.0.0.1:4455/payment.php?productID=' . $product['id'];
-//$serverURL = 'http://127.0.0.1:4455/handler.php?productID=' . $product['id'];
+$returnURL = 'http://' . $_SERVER['HTTP_HOST'] . '/payment.php?productID=' . $product['id'];
 
 echo "<h4>Покупка товара: {$product['name']}</h4>";
 
